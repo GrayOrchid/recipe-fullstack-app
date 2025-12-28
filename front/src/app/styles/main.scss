@@ -1,0 +1,16 @@
+@use "@/shared/styles/vars" as *;   
+@use "@/shared/styles/mixins" as *;
+@use "./reset";
+
+body {
+ background-color: var(--bg-color);
+  color: var(--text-primary);        
+  font-family: "Inter", sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
