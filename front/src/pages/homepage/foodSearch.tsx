@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-// Минимальный интерфейс для БЖУ
 interface Product {
     _id: string;
     product_name_ru?: string;
@@ -23,13 +22,12 @@ export const FoodSearch = () => {
         setLoading(true);
 
         try {
-            // Добавляем фильтр по категории "en:carrots"
             const baseUrl = `https://ru.openfoodfacts.org/cgi/search.pl`;
             const params = new URLSearchParams({
-                search_terms: query,           // Твой ввод (морковь)
-                tagtype_0: 'categories',       // Фильтр по категориям
+                search_terms: query,
+                tagtype_0: 'categories',
                 tag_contains_0: 'contains',
-                tag_0: 'en:carrots',           // Ищем именно в категории "Морковь"
+                tag_0: 'en:carrots',
                 action: 'process',
                 json: '1',
                 page_size: '5'
